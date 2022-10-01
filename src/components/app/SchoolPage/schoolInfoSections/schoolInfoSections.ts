@@ -1,10 +1,15 @@
 import { FC } from 'react';
 import OverviewSection from './OverviewSection';
 import EducationalOfferSection from './EducationalOfferSection';
-import ClassProfilesSection from "./ClassProfilesSection";
+import ClassProfilesSection from './ClassProfilesSection';
 import { SectionComponentProps } from './types';
+import PublicTransportSection from './PublicTransportSection';
 
-export type SchoolInfoSectionId = 'overview' | 'classProfiles' | 'educationalOffer';
+export type SchoolInfoSectionId =
+  | 'overview'
+  | 'classProfiles'
+  | 'educationalOffer'
+  | 'publicTransport';
 
 export interface SchoolInfoSectionConfig {
   id: SchoolInfoSectionId;
@@ -27,6 +32,11 @@ const schoolInfoSections: Record<SchoolInfoSectionId, SchoolInfoSectionConfig> =
     id: 'educationalOffer',
     name: 'Oferta edukacyjna',
     SectionComponent: EducationalOfferSection,
+  },
+  publicTransport: {
+    id: 'publicTransport',
+    name: 'Dojazd komunikacją',
+    SectionComponent: PublicTransportSection,
   },
 };
 
